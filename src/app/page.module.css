@@ -1,0 +1,303 @@
+.page {
+  --background: #fafafa;
+  --foreground: #fff;
+
+  --text-primary: #000;
+  --text-secondary: #666;
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+  --button-secondary-border: #ebebeb;
+
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 800px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: var(--foreground);
+  padding: 120px 60px;
+  gap: 24px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 24px;
+}
+
+.intro h1 {
+  max-width: 320px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -2.4px;
+  text-wrap: balance;
+  color: var(--text-primary);
+}
+
+.intro p {
+  max-width: 440px;
+  font-size: 18px;
+  line-height: 32px;
+  text-wrap: balance;
+  color: var(--text-secondary);
+}
+
+.intro a {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.ctas {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.ctas > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 128px;
+  border: 1px solid transparent;
+  transition: 0.2s;
+  cursor: pointer;
+  width: fit-content;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ctaSecondaryButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 128px;
+  border: 1px solid var(--button-secondary-border);
+  transition: 0.2s;
+  cursor: pointer;
+  width: fit-content;
+  font-weight: 500;
+  text-decoration: none;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+}
+
+.primary {
+  background: var(--text-primary);
+  color: var(--background);
+  gap: 8px;
+}
+
+.secondary {
+  border-color: var(--button-secondary-border);
+  background: transparent;
+  color: var(--text-primary);
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover {
+    background: var(--button-primary-hover);
+    border-color: transparent;
+  }
+
+  .secondary:hover {
+    background: var(--button-secondary-hover);
+    border-color: transparent;
+  }
+
+  .ctaSecondaryButton:hover {
+    background: var(--button-secondary-hover);
+    border-color: transparent;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border: 1px solid var(--button-secondary-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-family: var(--font-geist-mono);
+  font-size: 14px;
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.alert {
+  width: 100%;
+  border: 1px solid var(--button-secondary-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--button-secondary-hover);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.modalOverlay {
+  --background: #fafafa;
+  --foreground: #fff;
+
+  --text-primary: #000;
+  --text-secondary: #666;
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+  --button-secondary-border: #ebebeb;
+
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: auto;
+}
+
+.modal {
+  width: 100%;
+  max-width: 560px;
+  background: var(--foreground);
+  border: 1px solid var(--button-secondary-border);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.modalTitle {
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--text-primary);
+}
+
+.modalClose {
+  border: 1px solid var(--button-secondary-border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font: inherit;
+  background: transparent;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.modalBody {
+  display: grid;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 48px 24px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .intro {
+    gap: 16px;
+  }
+
+  .intro h1 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.92px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert();
+  }
+
+  .page {
+    --background: #000;
+    --foreground: #000;
+
+    --text-primary: #ededed;
+    --text-secondary: #999;
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+    --button-secondary-border: #1a1a1a;
+  }
+
+  .modalOverlay {
+    --background: #000;
+    --foreground: #000;
+
+    --text-primary: #ededed;
+    --text-secondary: #999;
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+    --button-secondary-border: #1a1a1a;
+  }
+}
